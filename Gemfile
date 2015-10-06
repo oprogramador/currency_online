@@ -14,6 +14,7 @@ gem 'haml-rails'
 gem 'pg'
 gem 'simple_form'
 gem 'sidekiq'
+gem 'sidekiq-scheduler', '~> 1'
 
 group :development do
   gem 'better_errors'

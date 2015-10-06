@@ -14,8 +14,10 @@ class Exchange < ActiveRecord::Base
     xml.each do |row|
       currency = Currency.new(
         :name => row.xpath('.//nazwa_waluty').text,
-        :buy_price => row.xpath('.//kurs_kupna').text,
-        :sell_price => row.xpath('.//kurs_sprzedazy').text,
+        :buy_price => row.xpath('.//kurs_kupna').text.sub(',', '.').to_f,
+        :sell_price => row.xpath('.//kurs_sprzedazy').text.sub(',', '.').to_f,
+        :converter => row.xpath('.//przelicznik').text.sub(',', '.').to_f,
+        :code => row.xpath('.//kod_waluty').text,
         :exchange => exchange,
       )
       currency.save
