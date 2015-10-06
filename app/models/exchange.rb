@@ -1,11 +1,24 @@
+require 'open-uri'
+require 'nokogiri'
+
 class Exchange < ActiveRecord::Base
-  #you can change names if you don't like them
-
-  def get_nbp_xml
-
+  def self.get_nbp_xml
+    xml = Nokogiri::HTML open('http://www.nbp.pl/kursy/xml/LastC.xml')
+    xml.xpath '//tabela_kursow//pozycja'
   end
 
-  def save_current_rates
-
+  def self.save_current_rates
+    xml = get_nbp_xml
+    exchange = Exchange.new :name => 'exchange '+Time.now.to_s
+    exchange.save
+    xml.each do |row|
+      currency = Currency.new(
+        :name => row.xpath('.//nazwa_waluty').text,
+        :buy_price => row.xpath('.//kurs_kupna').text,
+        :sell_price => row.xpath('.//kurs_sprzedazy').text,
+        :exchange => exchange,
+      )
+      currency.save
+    end
   end
 end
