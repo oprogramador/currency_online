@@ -25,6 +25,7 @@ db/*.sqlite3
 /config/secrets.yml
 
 # various artifacts
+/heroku_app/
 **.war
 *.tmp
 *.rbc

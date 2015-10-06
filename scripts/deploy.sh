@@ -1,5 +1,6 @@
 cd $(dirname $(realpath $0))
-cd ../..
+cd .. &&
+cd heroku_app &&
 mv currency_online/.git _git &&
 rm -rf currency_online &&
 git clone https://github.com/oprogramador/currency_online.git &&
