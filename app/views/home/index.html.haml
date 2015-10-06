@@ -1,5 +1,6 @@
 %h3= my_format(Time.now)
 %h3= session[:xx]
+%h3 env=#{Rails.env}
 %h3= "result=#{@result}, u=#{@u.to_json}"
 - if user_signed_in?
   %div Signed in as... #{current_user.email}
