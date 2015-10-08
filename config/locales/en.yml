@@ -20,7 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  home:
+    welcome: Welcome
   exchange:
     extra:
       header: List of exchanges

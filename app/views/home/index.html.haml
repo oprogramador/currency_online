@@ -1,12 +1,3 @@
 - if user_signed_in?
   %div Signed in as... #{current_user.email}
-%table{ :border => 2}
-  %thead
-    %tr
-      - Exchange.first.attributes.each do |key, value|
-        %td= key
-  %tbody
-    - Exchange.all.each do |entity|
-      %tr
-        - entity.attributes.each do |key, value|
-          %td= value
+%h3= t 'home.welcome'
