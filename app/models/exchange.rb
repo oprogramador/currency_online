@@ -1,5 +1,4 @@
 require 'open-uri'
-require 'nokogiri'
 
 class Exchange < ActiveRecord::Base
   has_many :currencies
