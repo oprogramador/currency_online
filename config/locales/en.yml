@@ -24,6 +24,7 @@ en:
   exchange:
     extra:
       header: List of exchanges
+      refresh_rates: Refresh rates manually
     keys:
       name: Name
       created_at: Created at

@@ -7,10 +7,8 @@ class MoneyController < ApplicationController
   end
 
   def refresh_rates
-    #for manual refreshing
-    #get latest exchange rates and save to db
-    #can be helpful: 
-    #http://www.nbp.pl/home.aspx?f=/kursy/instrukcja_pobierania_kursow_walut.html
+    Exchange.save_current_rates
+    redirect_to action: 'index'
   end
 
   def report
