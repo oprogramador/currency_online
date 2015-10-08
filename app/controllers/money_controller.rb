@@ -12,11 +12,7 @@ class MoneyController < ApplicationController
   end
 
   def report
-    #generate a report for selected currency
-    #report should show: basic statistics: mean, median, average
-    #also You can generate a simple chart(use can use some js library)
-
-    #this method should be available only for currencies which exist in the database 
+    @report = Currency.get_report params[:code]
   end
 
 
