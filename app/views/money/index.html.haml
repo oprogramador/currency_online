@@ -1,0 +1,12 @@
+%h1= t 'exchange.extra.header'
+%table{ :border => 2}
+  - keys = %w(name created_at updated_at)
+  %thead
+    %tr
+      - keys.each do |key|
+        %td= t 'exchange.keys.'+key
+  %tbody
+    - Exchange.all.each do |entity|
+      %tr
+        - keys.each do |key|
+          %td= link_to entity[key], controller: 'money', action: 'show', id: entity.id

@@ -1,0 +1,12 @@
+%h1= t 'currency.extra.header'
+%table{ :border => 2}
+  - keys = %w(name converter code buy_price sell_price)
+  %thead
+    %tr
+      - keys.each do |key|
+        %td= t 'currency.keys.'+key
+  %tbody
+    - Exchange.find(params[:id]).currencies.each do |entity|
+      %tr
+        - keys.each do |key|
+          %td= entity[key]

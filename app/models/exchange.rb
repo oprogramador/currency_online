@@ -2,6 +2,7 @@ require 'open-uri'
 require 'nokogiri'
 
 class Exchange < ActiveRecord::Base
+  has_many :currencies
   def self.get_nbp_xml
     xml = Nokogiri::HTML open('http://www.nbp.pl/kursy/xml/LastC.xml')
     xml.xpath '//tabela_kursow//pozycja'

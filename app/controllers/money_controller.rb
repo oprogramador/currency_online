@@ -1,12 +1,9 @@
 class MoneyController < ApplicationController
 
   def index
-    #show list of exchange rates with creation time
-    #don't forget about pagination
   end
 
   def show
-    #show table of currencies for selected exchange rate
   end
 
   def refresh_rates

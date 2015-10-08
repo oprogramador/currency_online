@@ -21,3 +21,19 @@
 
 en:
   hello: "Hello world"
+  exchange:
+    extra:
+      header: List of exchanges
+    keys:
+      name: Name
+      created_at: Created at
+      updated_at: Updated at
+  currency:
+    extra:
+      header: List of currencies
+    keys:
+      name: Name
+      converter: Converter
+      code: Code
+      buy_price: Buy price
+      sell_price: Sell price
