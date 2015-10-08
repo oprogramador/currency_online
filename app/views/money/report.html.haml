@@ -1,1 +1,4 @@
-%h3= @report
+%h1= t('report.extra.header')+" - #{@report[:currency].name} (#{@report[:currency].code})"
+- keys = %w(avg_buy_price avg_sell_price median_buy_price median_sell_price)
+- keys.each do |key|
+  %h3= t('report.keys.'+key)+": #{number_to_currency(@report[key.to_sym], unit: '')}"

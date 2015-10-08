@@ -15,5 +15,8 @@ class MoneyController < ApplicationController
     @report = Currency.get_report params[:code]
   end
 
+  def all_currencies
+    @currencies = Currency.select(:code, :name).group(:code, :name)
+  end
 
 end

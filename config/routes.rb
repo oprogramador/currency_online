@@ -6,6 +6,7 @@ Tshtask::Application.routes.draw do
     collection do
       post 'refresh_rates'
       get 'report'
+      get 'all_currencies'
     end
   end
 end

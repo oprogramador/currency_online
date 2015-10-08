@@ -13,6 +13,7 @@ class Currency < ActiveRecord::Base
     median_buy_price = self.median entities.map{|x| x.buy_price}
     median_sell_price = self.median entities.map{|x| x.sell_price}
     {
+      currency: entities[0],
       all: entities,
       avg_buy_price: avg_buy_price,
       avg_sell_price: avg_sell_price,

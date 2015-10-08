@@ -33,9 +33,22 @@ en:
   currency:
     extra:
       header: List of currencies
-    keys:
+    keys: &currency_keys
       name: Name
       converter: Converter
       code: Code
       buy_price: Buy price
       sell_price: Sell price
+  report:
+    extra:
+      header: Currency report
+    keys:
+      avg_buy_price: Average buy price
+      avg_sell_price: Average sell price
+      median_buy_price: Median buy price
+      median_sell_price: Median sell price 
+  all_currencies:
+    extra:
+      header: All currencies
+    keys:
+      <<: *currency_keys
