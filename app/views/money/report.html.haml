@@ -2,3 +2,4 @@
 - keys = %w(avg_buy_price avg_sell_price median_buy_price median_sell_price)
 - keys.each do |key|
   %h3= t('report.keys.'+key)+": #{number_to_currency(@report[key.to_sym], unit: '')}"
+%div= line_chart @report[:all].map{|x| [x.exchange.updated_at, x.sell_price]}

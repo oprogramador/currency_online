@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require dataTables/jquery.dataTables
+//= require chartkick
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
