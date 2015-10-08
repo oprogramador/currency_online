@@ -16,6 +16,7 @@ gem 'pg'
 gem 'simple_form'
 gem 'sidekiq'
 gem 'sidekiq-scheduler', '~> 1'
+gem 'nokogiri'
 
 group :development do
   gem 'better_errors'

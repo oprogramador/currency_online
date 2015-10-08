@@ -1,3 +1,5 @@
 - if user_signed_in?
   %div Signed in as... #{current_user.email}
 %h3= t 'home.welcome'
+%h4= link_to t('home.links.exchange'), controller: 'money', action: 'index'
+%h4= link_to t('home.links.all_currencies'), controller: 'money', action: 'all_currencies'

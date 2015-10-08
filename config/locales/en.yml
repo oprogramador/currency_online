@@ -20,11 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  home:
-    welcome: Welcome
   exchange:
     extra:
-      header: List of exchanges
+      header: &exchange_header List of exchanges
       refresh_rates: Refresh rates manually
     keys:
       name: Name
@@ -39,6 +37,11 @@ en:
       code: Code
       buy_price: Buy price
       sell_price: Sell price
+  all_currencies:
+    extra:
+      header: &all_currencies_header All currencies
+    keys:
+      <<: *currency_keys
   report:
     extra:
       header: Currency report
@@ -47,8 +50,8 @@ en:
       avg_sell_price: Average sell price
       median_buy_price: Median buy price
       median_sell_price: Median sell price 
-  all_currencies:
-    extra:
-      header: All currencies
-    keys:
-      <<: *currency_keys
+  home:
+    welcome: Welcome
+    links:
+      exchange: *exchange_header
+      all_currencies: *all_currencies_header
