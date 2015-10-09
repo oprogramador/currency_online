@@ -10,4 +10,4 @@
     - Exchange.all.each do |entity|
       %tr
         - keys.each do |key|
-          %td= link_to entity[key], controller: 'money', action: 'show', id: entity.id
+          %td{class: 'clickable', onclick: 'location.href="'+url_for(controller: 'money', action: 'show', id: entity.id)+'"'}= entity[key]

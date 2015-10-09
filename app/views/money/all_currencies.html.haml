@@ -9,4 +9,4 @@
     - @currencies.each do |entity|
       %tr
         - keys.each do |key|
-          %td= link_to entity[key], controller: 'money', action: 'report', code: entity.code
+          %td{class: 'clickable', onclick: 'location.href="'+url_for(controller: 'money', action: 'report', code: entity.code)+'"'}= entity[key]

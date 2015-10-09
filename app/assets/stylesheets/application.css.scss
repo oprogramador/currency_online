@@ -12,6 +12,9 @@
  *= require_tree .
  */
 
+.clickable {
+  cursor: pointer;
+}
 .data_table {
 	margin:0px;padding:0px;
 	width:100%;
