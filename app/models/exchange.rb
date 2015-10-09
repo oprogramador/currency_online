@@ -29,5 +29,6 @@ class Exchange < ActiveRecord::Base
       )
       currency.save
     end
+    UserMailer.info_to_all_users_about_new_exchange 
   end
 end
