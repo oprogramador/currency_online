@@ -9,7 +9,14 @@ class Exchange < ActiveRecord::Base
 
   def self.save_current_rates
     xml = get_nbp_xml
-    exchange = Exchange.new :name => 'exchange '+Time.now.to_s
+    exchange = Exchange.where('created_at::timestamp::date = ?', Time.now.strftime('%Y-%m-%d')).first
+    if exchange === nil
+      exchange = Exchange.new :name => 'exchange '+Time.now.to_s
+    else
+      exchange.currencies.each do |currency|
+        currency.destroy
+      end
+    end
     exchange.save
     xml.each do |row|
       currency = Currency.new(
