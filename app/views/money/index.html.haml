@@ -1,6 +1,6 @@
 %h1= t 'exchange.extra.header'
 %span= button_to t('exchange.extra.refresh_rates'), controller: 'money', action: 'refresh_rates'
-%table{border: 2}
+%table{border: 2, class: 'data_table'}
   - keys = %w(name created_at updated_at)
   %thead
     %tr

@@ -19,5 +19,5 @@
 //= require_tree .
 
 $(function() {
-  $('table').DataTable()
+  $('table.data_table').DataTable();
 });
