@@ -4,6 +4,7 @@ class MoneyController < ApplicationController
   end
 
   def show
+    @exchange = Exchange.find(params[:id])
   end
 
   def refresh_rates

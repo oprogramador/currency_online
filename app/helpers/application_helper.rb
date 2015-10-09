@@ -1,6 +1,10 @@
 module ApplicationHelper
   def my_format x
-    x.strftime '%Y-%m-%d %H:%M:%S'
+    if x.class == ActiveSupport::TimeWithZone
+      x.to_date.strftime '%Y-%m-%d'
+    else
+      x
+    end
   end
 
   def display_base_errors resource

@@ -1,7 +1,7 @@
 %h1= t 'exchange.extra.header'
 %span= button_to t('exchange.extra.refresh_rates'), controller: 'money', action: 'refresh_rates'
 %table{border: 2, class: 'data_table'}
-  - keys = %w(name created_at updated_at)
+  - keys = %w(name created_at)
   %thead
     %tr
       - keys.each do |key|
@@ -10,4 +10,4 @@
     - Exchange.all.each do |entity|
       %tr
         - keys.each do |key|
-          %td{class: 'clickable', onclick: 'location.href="'+url_for(controller: 'money', action: 'show', id: entity.id)+'"'}= entity[key]
+          %td{class: 'clickable', onclick: 'location.href="'+url_for(controller: 'money', action: 'show', id: entity.id)+'"'}= my_format(entity[key])
