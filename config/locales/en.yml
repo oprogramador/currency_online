@@ -39,7 +39,7 @@ en:
       sell_price: Sell price
   all_currencies:
     extra:
-      header: &all_currencies_header All currencies oop oo
+      header: &all_currencies_header All currencies
     keys:
       <<: *currency_keys
   report:
