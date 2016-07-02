@@ -13,4 +13,6 @@ Tshtask::Application.configure do
 
   config.action_mailer.default_url_options = { :host => ENV['DOMAIN_NAME'] }
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.asset_host = ENV['DOMAIN_NAME']
+  config.action_mailer.relative_url_root = ENV['DOMAIN_NAME']
 end
