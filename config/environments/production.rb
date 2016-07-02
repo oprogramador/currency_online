@@ -1,3 +1,5 @@
+require __dir__+'/common.rb'
+
 Tshtask::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
