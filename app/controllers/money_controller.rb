@@ -8,7 +8,7 @@ class MoneyController < ApplicationController
   end
 
   def refresh_rates
-    Exchange.save_current_rates
+    SaveCurrentRates.new.save_current_rates
     redirect_to action: 'index'
   end
 
